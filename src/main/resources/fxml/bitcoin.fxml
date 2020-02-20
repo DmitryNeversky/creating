@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bitcoin.ui.Controller">
+   <children>
+      <VBox alignment="BASELINE_CENTER" prefHeight="400.0" prefWidth="150.0" spacing="20.0">
+         <children>
+            <Label text="Upgrades">
+               <VBox.margin>
+                  <Insets bottom="34.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnIncome" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Income">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnSpeed" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Speed" />
+            <Button fx:id="btnCooler" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Cooler" />
+            <Button fx:id="btnMemory" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Memory" />
+            <Button fx:id="btnPrinter" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Printer">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox alignment="BASELINE_LEFT" layoutX="450.0" prefHeight="400.0" prefWidth="150.0" spacing="20.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Characters">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lblIncome" text="Income:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblSpeed" text="Speed:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCool" text="Cool:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblMemory" text="Memory:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFlame" text="Flame:" textFill="#00000098">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" text="Time:" textFill="#00000098">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <VBox alignment="BASELINE_CENTER" layoutX="150.0" prefHeight="400.0" prefWidth="295.0" spacing="20.0">
+         <children>
+            <Label text="Total">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="34.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblTotal" text="0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="img" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../../../../../../Users/Koshey/Pictures/printer.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

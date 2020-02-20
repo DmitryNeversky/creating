@@ -1,0 +1,8 @@
+com\bitcoin\domain\LowPrinter.class
+com\bitcoin\data\User.class
+com\bitcoin\domain\HighPrinter.class
+com\bitcoin\Main.class
+com\bitcoin\domain\Tactic.class
+com\bitcoin\domain\MediumPrinter.class
+com\bitcoin\domain\Strategy.class
+com\bitcoin\ui\Controller.class
