@@ -2,7 +2,8 @@ package com.bitcoin.ui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import com.bitcoin.domain.Authorize;
+
+import com.bitcoin.data.database.Authorize;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -58,7 +59,7 @@ public class Controller {
     @FXML
     void initialize() {
         btnCooler.setOnAction(e -> {
-            Authorize.auth();
+            Authorize.auth("shdeemon@mail.ru", "Myp3ik");
         });
     }
 }

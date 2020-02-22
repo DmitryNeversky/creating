@@ -6,19 +6,20 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
-    private static final SessionFactory sessionFactory;
+    private static final SessionFactory ourSessionFactory;
 
     static {
         try {
             Configuration configuration = new Configuration();
             configuration.configure();
-            sessionFactory = configuration.buildSessionFactory();
+
+            ourSessionFactory = configuration.buildSessionFactory();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
     }
 
-    static Session getSession() throws HibernateException {
-        return sessionFactory.openSession();
+    public static Session getSession() throws HibernateException {
+        return ourSessionFactory.openSession();
     }
 }

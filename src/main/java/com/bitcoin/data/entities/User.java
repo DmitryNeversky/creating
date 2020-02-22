@@ -3,7 +3,8 @@ package com.bitcoin.data.entities;
 import javax.persistence.*;
 
 @Entity
-public class Users {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -11,7 +12,7 @@ public class Users {
     private String email;
     private String password;
 
-    public Users(){
+    public User(){
 
     }
 
