@@ -10,8 +10,8 @@ public class HibernateUtil {
 
     static {
         try {
-            Configuration configuration = new Configuration();
-            configuration.configure();
+            Configuration configuration = new Configuration()
+                    .configure("/data/hibernate.cfg.xml");
 
             ourSessionFactory = configuration.buildSessionFactory();
         } catch (Throwable ex) {
