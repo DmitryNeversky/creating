@@ -28,23 +28,38 @@ public class Authorize {
 
         if(contain == 0) {
             Crud.addUser(email, password);
-            System.out.println("Пользователь добавлен!");
+            initialize();
         } else {
             initialize();
         }
     }
 
     private void initialize() {
-        List<User> initList = Crud.getUser(email);
-        for(User pair : initList){
-            if(pair.getPassword().equals(password)){
-                System.out.println("Всё правильно!");
-            }
+        if(identify()){
+            System.out.println("Всё правильно!");
         }
-        // Выгружать значения из бд
     }
 
-    public void removeAccount(){
-        System.out.println("Робит");
+    public String removeAccount(){
+        long id = 0;
+        for(User pair : list){
+            if(pair.getEmail().equals(email)){
+                if(identify()) {
+                    id = pair.getId();
+                } else {
+                    return "Неверный пароль";
+                }
+            }
+        }
+        if(id == 0) return "Аккаунт не найден!";
+        return Crud.removeUser(id);
+    }
+
+    private boolean identify(){
+        List<User> initList = Crud.getUser(email);
+        for(User pair : initList){
+            return pair.getPassword().equals(password);
+        }
+        return false;
     }
 }

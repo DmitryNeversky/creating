@@ -24,11 +24,15 @@ public class Crud {
         }
     }
 
-    public static void removeUser(Object user){
+    public static String removeUser(Long id){
         try(Session session = HibernateUtil.getSession()) {
-            session.load(User.class, 1);
+            session.beginTransaction();
+            Query q = session.createQuery("delete User where id = " + id);
+            q.executeUpdate();
+            session.getTransaction().commit();
+            return "Аккаунт удален!";
         } catch (Throwable cause){
-            cause.printStackTrace();
+            return "Ошибка: " + cause;
         }
     }
 

@@ -59,7 +59,7 @@ public class Controller {
     @FXML
     void initialize() {
         btnCooler.setOnAction(e -> {
-            new Authorize("mit@mail.ru", "Myp3ik").removeAccount();
+            new Authorize("mitya@mail.r", "Myp3ik").removeAccount();
         });
     }
 }
