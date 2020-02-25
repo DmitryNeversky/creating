@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8df5bb66-8673-482e-af24-7446950776ee" name="Default Changelist" comment="" />
+    <list default="true" id="8df5bb66-8673-482e-af24-7446950776ee" name="Default Changelist" comment="Hibernate">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/auth.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/HibernateUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/Printer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Authorize.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/AuthController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/data/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/fxml/auth.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Authorize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Authorize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/Controller.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -15,24 +53,35 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Y1quJ18QCYHsg1uebKbmHssIR2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/bitcoin/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.48735633" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Vehicles\IntelRush\projects\Bitcoin\src\main\resources\fxml" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Vehicles\IntelRush\projects\Bitcoin\src\main\java\com\bitcoin\data" />
       <recent name="C:\Vehicles\IntelRush\projects\Bitcoin\src\main\java\com\bitcoin\domain" />
       <recent name="C:\Vehicles\IntelRush\projects\Bitcoin\src\main\java\com\bitcoin\ui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Vehicles\IntelRush\projects\Bitcoin\src\main\resources\data" />
+      <recent name="C:\Vehicles\IntelRush\projects\Bitcoin\src\main\resources" />
+      <recent name="C:\Vehicles\IntelRush\projects\Bitcoin\src\main\resources\fxml" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -68,6 +117,16 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -79,11 +138,71 @@
       <option name="presentableId" value="Default" />
       <updated>1582120668933</updated>
       <workItem from="1582120670640" duration="3025000" />
-      <workItem from="1582182653079" duration="1035000" />
+      <workItem from="1582182653079" duration="2417000" />
+      <workItem from="1582192758630" duration="5383000" />
+      <workItem from="1582206167012" duration="3411000" />
+      <workItem from="1582224906981" duration="488000" />
+      <workItem from="1582268916264" duration="8328000" />
+      <workItem from="1582309026518" duration="3851000" />
+      <workItem from="1582356788210" duration="2776000" />
+      <workItem from="1582398716368" duration="1998000" />
+      <workItem from="1582449596895" duration="2717000" />
+      <workItem from="1582462617264" duration="15710000" />
+      <workItem from="1582538761083" duration="7428000" />
+      <workItem from="1582553949087" duration="628000" />
+      <workItem from="1582562301347" duration="2464000" />
+      <workItem from="1582655170351" duration="551000" />
     </task>
+    <task id="LOCAL-00001" summary="Hibernate">
+      <created>1582359450192</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582359450192</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Hibernate">
+      <created>1582400720646</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582400720646</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Hibernate">
+      <created>1582480864020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582480864020</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Sign In/Up">
+      <created>1582546252942</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582546252942</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Hibernate" />
+    <MESSAGE value="Sign In/Up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sign In/Up" />
   </component>
 </project>

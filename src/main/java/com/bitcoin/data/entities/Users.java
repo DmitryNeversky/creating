@@ -3,8 +3,7 @@ package com.bitcoin.data.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -12,7 +11,10 @@ public class User {
     private String email;
     private String password;
 
-    public User(){
+    @OneToOne(optional = false, cascade = CascadeType.ALL)
+    private Printer printer;
+
+    public Users(){
 
     }
 
@@ -42,7 +44,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Users{" +
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +

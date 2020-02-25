@@ -1,14 +1,14 @@
 package com.bitcoin.domain;
 
 import com.bitcoin.data.database.Crud;
-import com.bitcoin.data.entities.User;
+import com.bitcoin.data.entities.Users;
 
 import java.util.List;
 
 public class Authorize {
     private String email;
     private String password;
-    private List<User> list = Crud.getUsers();
+    private List<Users> list = Crud.getUsers();
 
     public Authorize(String email, String password){
         this.email = email;
@@ -19,7 +19,7 @@ public class Authorize {
         int contain = 0;
 
         if(list != null && !list.isEmpty()) {
-            for (User pair : list) {
+            for (Users pair : list) {
                 if (pair.getEmail().equals(email)) {
                     contain++;
                 }
@@ -42,7 +42,7 @@ public class Authorize {
 
     public String removeAccount(){
         long id = 0;
-        for(User pair : list){
+        for(Users pair : list){
             if(pair.getEmail().equals(email)){
                 if(identify()) {
                     id = pair.getId();
@@ -56,8 +56,8 @@ public class Authorize {
     }
 
     private boolean identify(){
-        List<User> initList = Crud.getUser(email);
-        for(User pair : initList){
+        List<Users> initList = Crud.getUser(email);
+        for(Users pair : initList){
             return pair.getPassword().equals(password);
         }
         return false;

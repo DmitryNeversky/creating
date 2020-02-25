@@ -1,22 +1,31 @@
 package com.bitcoin.data.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Printer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private byte lvl;
+    private long id;
 
+    private byte lvl;
     private double income;
     private int speed;
     private int cooler;
     private int memory;
 
+    @OneToOne(optional=false, mappedBy="printer")
+    private Users users;
+
     public Printer(){}
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public byte getLvl() {
         return lvl;

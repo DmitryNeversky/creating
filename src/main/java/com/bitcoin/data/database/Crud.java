@@ -1,6 +1,6 @@
 package com.bitcoin.data.database;
 
-import com.bitcoin.data.entities.User;
+import com.bitcoin.data.entities.Users;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -13,7 +13,7 @@ public class Crud {
         try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
 
-            User user = new User();
+            Users user = new Users();
             user.setEmail(email);
             user.setPassword(password);
 
@@ -27,7 +27,7 @@ public class Crud {
     public static String removeUser(Long id){
         try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
-            Query q = session.createQuery("delete User where id = " + id);
+            Query q = session.createQuery("delete Users where id = " + id);
             q.executeUpdate();
             session.getTransaction().commit();
             return "Аккаунт удален!";
@@ -36,23 +36,23 @@ public class Crud {
         }
     }
 
-    public static List<User> getUser(String email) {
+    public static List<Users> getUser(String email) {
         try(Session session = HibernateUtil.getSession()){
             session.beginTransaction();
 
-            Query query = session.createQuery("FROM User where email = :usernameParam");
+            Query query = session.createQuery("FROM Users where email = :usernameParam");
             query.setParameter("usernameParam", email);
-            return (List<User>) query.list();
+            return (List<Users>) query.list();
         }
     }
 
-    public static List<User> getUsers(){
-        List<User> list = null;
+    public static List<Users> getUsers(){
+        List<Users> list = null;
         try(Session session = HibernateUtil.getSession()){
             session.beginTransaction();
 
-            Query query = session.createQuery("FROM User");
-            list = (List<User>) query.list();
+            Query query = session.createQuery("FROM Users");
+            list = (List<Users>) query.list();
 
             session.getTransaction().commit();
         } catch (Throwable cause){
