@@ -48,6 +48,8 @@ public class RegController extends Controller{
                 passwordLabel.setText("");
             }
 
+            // Проверка на содержание пользователя в БД
+
             if(new Authorize(email, password).registry()){
                 regButton.getScene().getWindow().hide();
                 repaint("/fxml/auth.fxml", "Авторизация");

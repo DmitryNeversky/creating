@@ -24,6 +24,9 @@ public class AuthController extends Controller{
     private Button authButton;
 
     @FXML
+    private Button regButton;
+
+    @FXML
     private PasswordField authPassword;
 
     @FXML
@@ -42,26 +45,18 @@ public class AuthController extends Controller{
 
     @FXML
     void initialize() {
-        String email = authEmail.getText().trim();
-        String password = authPassword.getText().trim();
+        String email = authEmail.getText();
+        String password = authPassword.getText();
         authButton.setOnAction(e -> {
+
+            // if
             authButton.getScene().getWindow().hide();
             repaint("/fxml/bitcoin.fxml", "Bitcoin");
+        });
 
-//                authButton.getScene().getWindow().hide();
-//
-//                FXMLLoader loader = new FXMLLoader();
-//                loader.setLocation(getClass().getResource("/fxml/bitcoin.fxml"));
-//                try {
-//                    loader.load();
-//                } catch (IOException ex) {
-//                    ex.printStackTrace();
-//                }
-//
-//                Parent root = loader.getRoot();
-//                Stage stage = new Stage();
-//                stage.setScene(new Scene(root));
-//                stage.showAndWait();
+        regButton.setOnAction(e -> {
+            regButton.getScene().getWindow().hide();
+            repaint("/fxml/reg.fxml", "Регистрация");
         });
     }
 }

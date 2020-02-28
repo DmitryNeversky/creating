@@ -2,30 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8df5bb66-8673-482e-af24-7446950776ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RegController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/reg.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Authorize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Authorize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RegController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/auth.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/auth.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/bitcoin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/bitcoin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/Printer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/User.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Authorize.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Authorize.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/AuthController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/auth.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/auth.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/bitcoin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/bitcoin.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +146,7 @@
       <workItem from="1582826850975" duration="1311000" />
       <workItem from="1582867917573" duration="6517000" />
       <workItem from="1582887944239" duration="4525000" />
-      <workItem from="1582897528739" duration="4510000" />
+      <workItem from="1582897528739" duration="5541000" />
     </task>
     <task id="LOCAL-00001" summary="Hibernate">
       <created>1582359450192</created>
@@ -199,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582655823114</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Validate system">
+      <created>1582904885639</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1582904885639</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +213,7 @@
     <MESSAGE value="Hibernate" />
     <MESSAGE value="Sign In/Up" />
     <MESSAGE value="Entities OneToOne" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entities OneToOne" />
+    <MESSAGE value="Validate system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validate system" />
   </component>
 </project>
