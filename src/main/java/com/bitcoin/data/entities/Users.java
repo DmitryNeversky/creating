@@ -6,19 +6,20 @@ import javax.persistence.*;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
 
     private String email;
     private String password;
 
-    @OneToOne(optional = false, cascade = CascadeType.ALL)
+//    @JoinColumn (name="printer_id")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Printer printer;
 
     public Users(){
 
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
@@ -30,7 +31,11 @@ public class Users {
         return password;
     }
 
-    public void setId(Long id) {
+    public Printer getPrinter() {
+        return printer;
+    }
+
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -42,12 +47,7 @@ public class Users {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "Users{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+    public void setPrinter(Printer printer) {
+        this.printer = printer;
     }
 }

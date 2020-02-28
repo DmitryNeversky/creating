@@ -15,7 +15,7 @@ public class Authorize {
         this.password = password;
     }
 
-    public void auth(){
+    public boolean registry(){
         int contain = 0;
 
         if(list != null && !list.isEmpty()) {
@@ -28,15 +28,9 @@ public class Authorize {
 
         if(contain == 0) {
             Crud.addUser(email, password);
-            initialize();
+            return true;
         } else {
-            initialize();
-        }
-    }
-
-    private void initialize() {
-        if(identify()){
-            System.out.println("Всё правильно!");
+            return false;
         }
     }
 

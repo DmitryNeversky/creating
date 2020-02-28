@@ -5,19 +5,27 @@ import javax.persistence.*;
 @Entity
 public class Printer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private long id;
 
-    private byte lvl;
+    private int lvl;
     private double income;
     private int speed;
     private int cooler;
     private int memory;
 
-    @OneToOne(optional=false, mappedBy="printer")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy="printer")
     private Users users;
 
     public Printer(){}
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
+    }
 
     public long getId() {
         return id;
@@ -27,11 +35,11 @@ public class Printer {
         this.id = id;
     }
 
-    public byte getLvl() {
+    public int getLvl() {
         return lvl;
     }
 
-    public void setLvl(byte lvl) {
+    public void setLvl(int lvl) {
         this.lvl = lvl;
     }
 

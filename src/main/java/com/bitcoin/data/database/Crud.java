@@ -1,5 +1,6 @@
 package com.bitcoin.data.database;
 
+import com.bitcoin.data.entities.Printer;
 import com.bitcoin.data.entities.Users;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -16,6 +17,16 @@ public class Crud {
             Users user = new Users();
             user.setEmail(email);
             user.setPassword(password);
+
+            Printer printer = new Printer();
+            printer.setLvl(1);
+            printer.setIncome(1);
+            printer.setSpeed(2000);
+            printer.setCooler(10);
+            printer.setMemory(1000);
+            //printer.setUsers(user);
+
+            user.setPrinter(printer);
 
             session.save(user);
             session.getTransaction().commit();

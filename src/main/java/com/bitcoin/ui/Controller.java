@@ -1,65 +1,54 @@
 package com.bitcoin.ui;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import com.bitcoin.domain.Authorize;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class Controller {
+abstract class Controller {
 
-    @FXML
-    private ResourceBundle resources;
+    void repaint(String dir, String name){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(dir));
+        try {
+            loader.load();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle(name);
+        stage.showAndWait();
+    }
 
-    @FXML
-    private URL location;
+    boolean validEmail(String email){
+        char[] chars = email.toCharArray();
+        int index = 0;
 
-    @FXML
-    private Label lblSpeed;
+        for(int i = 0; i < email.length(); i++){
+            if(chars[i] == '@'){
+                index = i;
+            }
+        }
 
-    @FXML
-    private ImageView img;
+        String subEmail = email.substring(index);
+        String preEmail = email.substring(0, index);
 
-    @FXML
-    private Label lblFlame;
+        Pattern emailPattern = Pattern.compile("[~`'\\]\"!@#$%^&*)(=+}{:/?\\[№; ,]");
+        Matcher matchEmail = emailPattern.matcher(preEmail);
 
-    @FXML
-    private Button btnPrinter;
+        return !preEmail.isEmpty() && !matchEmail.find() && !preEmail.contains("\\") && (subEmail.equals("@mail.ru") || subEmail.equals("@inbox.ru") || subEmail.equals("@list.ru") || subEmail.equals("@bk.ru"));
+    }
 
-    @FXML
-    private Button btnSpeed;
+    boolean validPassword(String password){
+        Pattern passwordPattern = Pattern.compile("\\W");
+        Matcher matchPassword = passwordPattern.matcher(password);
 
-    @FXML
-    private Label lblMemory;
-
-    @FXML
-    private Label lblTotal;
-
-    @FXML
-    private Button btnMemory;
-
-    @FXML
-    private Label lblCool;
-
-    @FXML
-    private Button btnIncome;
-
-    @FXML
-    private Label lblTime;
-
-    @FXML
-    private Label lblIncome;
-
-    @FXML
-    private Button btnCooler;
-
-    @FXML
-    void initialize() {
-        btnCooler.setOnAction(e -> {
-            new Authorize("mitya@mail.ru", "Myp3ik").auth();
-        });
+        return !password.isEmpty() && !matchPassword.find();
     }
 }

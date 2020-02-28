@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AuthController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bitcoin.ui.AuthController">
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -23,12 +23,12 @@
                               <Insets bottom="30.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Email">
+                        <Label fx:id="lblEmail" text="Email">
                            <font>
                               <Font name="Calibri" size="16.0" />
                            </font></Label>
                         <TextField fx:id="authEmail" />
-                        <Label text="Пароль">
+                        <Label fx:id="lblPassword" text="Пароль">
                            <font>
                               <Font name="Calibri" size="14.0" />
                            </font></Label>
