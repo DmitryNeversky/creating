@@ -1,5 +1,6 @@
 package com.bitcoin.ui;
 
+import com.bitcoin.domain.Authorize;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -7,12 +8,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
-import java.util.ResourceBundle;
 
 public class AuthController extends Controller{
-
-    @FXML
-    private ResourceBundle resources;
 
     @FXML
     private URL location;
@@ -30,28 +27,25 @@ public class AuthController extends Controller{
     private PasswordField authPassword;
 
     @FXML
-    private Label lblEmail;
+    private Label emailLabel;
 
     @FXML
-    private Label lblPassword;
-
-    public void setLblEmail(String email) {
-        this.lblPassword.setText(email);
-    }
-
-    public void setLblPassword(String password) {
-        this.lblPassword.setText(password);
-    }
+    private Label passwordLabel;
 
     @FXML
     void initialize() {
-        String email = authEmail.getText();
-        String password = authPassword.getText();
         authButton.setOnAction(e -> {
+            String email = authEmail.getText();
+            String password = authPassword.getText();
 
-            // if
-            authButton.getScene().getWindow().hide();
-            repaint("/fxml/bitcoin.fxml", "Bitcoin");
+            if(validEmail(email, emailLabel) && validPassword(password, passwordLabel)) {
+                if (new Authorize(email, password).auth()) {
+                    authButton.getScene().getWindow().hide();
+                    repaint("/fxml/bitcoin.fxml", "Игра");
+                } else {
+                    emailLabel.setText("Аккаунт не найден");
+                }
+            }
         });
 
         regButton.setOnAction(e -> {

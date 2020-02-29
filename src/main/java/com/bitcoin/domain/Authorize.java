@@ -15,23 +15,29 @@ public class Authorize {
         this.password = password;
     }
 
+    public boolean auth(){
+        return findAccount() && identify();
+    }
+
     public boolean registry(){
-        int contain = 0;
-
-        if(list != null && !list.isEmpty()) {
-            for (Users pair : list) {
-                if (pair.getEmail().equals(email)) {
-                    contain++;
-                }
-            }
-        }
-
-        if(contain == 0) {
+        if(findAccount()) {
             Crud.addUser(email, password);
             return true;
         } else {
             return false;
         }
+    }
+
+    private boolean findAccount(){
+        if(list != null && !list.isEmpty()) {
+            for (Users pair : list) {
+                if (pair.getEmail().equals(email)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     public String removeAccount(){

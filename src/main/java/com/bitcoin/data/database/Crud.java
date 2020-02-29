@@ -53,12 +53,15 @@ public class Crud {
 
             Query query = session.createQuery("FROM Users where email = :usernameParam");
             query.setParameter("usernameParam", email);
+
             return (List<Users>) query.list();
         }
     }
 
     public static List<Users> getUsers(){
+
         List<Users> list = null;
+
         try(Session session = HibernateUtil.getSession()){
             session.beginTransaction();
 
@@ -69,6 +72,7 @@ public class Crud {
         } catch (Throwable cause){
             cause.printStackTrace();
         }
+
         return list;
     }
 }

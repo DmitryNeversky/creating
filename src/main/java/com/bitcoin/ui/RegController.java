@@ -32,30 +32,34 @@ public class RegController extends Controller{
 
             // Проверка email на валидность
 
-            if(validEmail(email)){
-                emailLabel.setText("");
-            } else {
-                emailLabel.setText("Неверный формат email");
-                return;
-            }
+//            if(validEmail(email)){
+//                emailLabel.setText("");
+//            } else {
+//                emailLabel.setText("Неверный формат email");
+//                return;
+//            }
 
             // Проверка пароля на валидность
 
-            if(validPassword(password)){
-                passwordLabel.setText("Пароль содержит запрещенные знаки");
-                return;
-            } else {
-                passwordLabel.setText("");
-            }
+//            if(!validPassword(password)){
+//                passwordLabel.setText("Пароль содержит запрещенные символы");
+//                return;
+//            } else {
+//                passwordLabel.setText("");
+//                System.out.println(validPassword(password));
+//            }
 
             // Проверка на содержание пользователя в БД
 
-            if(new Authorize(email, password).registry()){
-                regButton.getScene().getWindow().hide();
-                repaint("/fxml/auth.fxml", "Авторизация");
-            } else {
-                emailLabel.setText("Указанный email уже используется!");
-            }
+//            if(new Authorize(email, password).registry()){
+//                regButton.getScene().getWindow().hide();
+//                repaint("/fxml/auth.fxml", "Авторизация");
+//            } else {
+//                emailLabel.setText("Указанный email уже используется!");
+//            }
+
+            regButton.getScene().getWindow().hide();
+            repaint("/fxml/auth.fxml", "Авторизация");
         });
     }
 }

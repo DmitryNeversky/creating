@@ -3,6 +3,7 @@ package com.bitcoin.ui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,7 +27,7 @@ abstract class Controller {
         stage.showAndWait();
     }
 
-    boolean validEmail(String email){
+    boolean validEmail(String email, Label lbl){
         char[] chars = email.toCharArray();
         int index = 0;
 
@@ -42,13 +43,25 @@ abstract class Controller {
         Pattern emailPattern = Pattern.compile("[~`'\\]\"!@#$%^&*)(=+}{:/?\\[№; ,]");
         Matcher matchEmail = emailPattern.matcher(preEmail);
 
-        return !preEmail.isEmpty() && !matchEmail.find() && !preEmail.contains("\\") && (subEmail.equals("@mail.ru") || subEmail.equals("@inbox.ru") || subEmail.equals("@list.ru") || subEmail.equals("@bk.ru"));
+        if( !preEmail.isEmpty() && !matchEmail.find() && !preEmail.contains("\\") && (subEmail.equals("@mail.ru") || subEmail.equals("@inbox.ru") || subEmail.equals("@list.ru") || subEmail.equals("@bk.ru"))){
+            lbl.setText("");
+            return true;
+        } else {
+            lbl.setText("Неверный формат email");
+            return false;
+        }
     }
 
-    boolean validPassword(String password){
+    boolean validPassword(String password, Label lbl){
         Pattern passwordPattern = Pattern.compile("\\W");
         Matcher matchPassword = passwordPattern.matcher(password);
 
-        return !password.isEmpty() && !matchPassword.find();
+        if(!password.isEmpty() && !matchPassword.find()){
+            lbl.setText("");
+            return true;
+        } else {
+            lbl.setText("Пароль содержит запрещенные символы");
+            return false;
+        }
     }
 }
