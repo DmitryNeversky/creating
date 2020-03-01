@@ -24,6 +24,9 @@ public class AuthController extends Validator{
     private Button regButton;
 
     @FXML
+    private Button remButton;
+
+    @FXML
     private PasswordField authPassword;
 
     @FXML
@@ -50,6 +53,11 @@ public class AuthController extends Validator{
         regButton.setOnAction(e -> {
             regButton.getScene().getWindow().hide();
             repaint("/fxml/reg.fxml", "Регистрация");
+        });
+
+        remButton.setOnAction(e -> {
+            remButton.getScene().getWindow().hide();
+            repaint("/fxml/del.fxml", "Удаление");
         });
     }
 }

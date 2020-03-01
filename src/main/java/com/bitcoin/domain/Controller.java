@@ -31,11 +31,12 @@ public class Controller {
         }
     }
 
-    public boolean registry(){
-        if(findAccount()) {
+    public boolean registry(Label emailLabel){
+        if(!findAccount()) {
             Crud.addUser(email, password);
             return true;
         } else {
+            emailLabel.setText("Такой аккаунт уже существует");
             return false;
         }
     }

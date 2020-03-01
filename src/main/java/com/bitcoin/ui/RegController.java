@@ -1,5 +1,6 @@
 package com.bitcoin.ui;
 
+import com.bitcoin.domain.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -29,36 +30,12 @@ public class RegController extends Validator {
             String email = regEmail.getText();
             String password = regPassword.getText();
 
-            // Проверка email на валидность
-
-//            if(validEmail(email)){
-//                emailLabel.setText("");
-//            } else {
-//                emailLabel.setText("Неверный формат email");
-//                return;
-//            }
-
-            // Проверка пароля на валидность
-
-//            if(!validPassword(password)){
-//                passwordLabel.setText("Пароль содержит запрещенные символы");
-//                return;
-//            } else {
-//                passwordLabel.setText("");
-//                System.out.println(validPassword(password));
-//            }
-
-            // Проверка на содержание пользователя в БД
-
-//            if(new Authorize(email, password).registry()){
-//                regButton.getScene().getWindow().hide();
-//                repaint("/fxml/auth.fxml", "Авторизация");
-//            } else {
-//                emailLabel.setText("Указанный email уже используется!");
-//            }
-
-            regButton.getScene().getWindow().hide();
-            repaint("/fxml/auth.fxml", "Авторизация");
+            if(validEmail(email, emailLabel) && validPassword(password, passwordLabel)) {
+                if (new Controller(email, password).registry(emailLabel)) {
+                    regButton.getScene().getWindow().hide();
+                    repaint("/fxml/auth.fxml", "Авторизация");
+                }
+            }
         });
     }
 }
