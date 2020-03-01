@@ -34,6 +34,7 @@ public class AuthController extends Validator{
 
     @FXML
     void initialize() {
+
         authButton.setOnAction(e -> {
             String email = authEmail.getText();
             String password = authPassword.getText();
