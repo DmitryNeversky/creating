@@ -47,26 +47,34 @@ public class Crud {
         }
     }
 
-    public static List<Users> getUser(String email) {
+    public static List getUser(String email) {
+
+        List list = null;
+
         try(Session session = HibernateUtil.getSession()){
             session.beginTransaction();
 
-            Query query = session.createQuery("FROM Users where email = :usernameParam");
-            query.setParameter("usernameParam", email);
+            Query query = session.createQuery("FROM Users where email=:emailParam");
+            query.setParameter("emailParam", email);
+            list = query.list();
 
-            return (List<Users>) query.list();
+            session.getTransaction().commit();
+        } catch (Throwable cause){
+            cause.printStackTrace();
         }
+
+        return list;
     }
 
-    public static List<Users> getUsers(){
+    public static List getUsers(){
 
-        List<Users> list = null;
+        List list = null;
 
         try(Session session = HibernateUtil.getSession()){
             session.beginTransaction();
 
             Query query = session.createQuery("FROM Users");
-            list = (List<Users>) query.list();
+            list = query.list();
 
             session.getTransaction().commit();
         } catch (Throwable cause){

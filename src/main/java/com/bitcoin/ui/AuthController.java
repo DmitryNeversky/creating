@@ -1,6 +1,6 @@
 package com.bitcoin.ui;
 
-import com.bitcoin.domain.Authorize;
+import com.bitcoin.domain.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 
-public class AuthController extends Controller{
+public class AuthController extends Validator{
 
     @FXML
     private URL location;
@@ -39,11 +39,9 @@ public class AuthController extends Controller{
             String password = authPassword.getText();
 
             if(validEmail(email, emailLabel) && validPassword(password, passwordLabel)) {
-                if (new Authorize(email, password).auth()) {
+                if (new Controller(email, password).auth(emailLabel, passwordLabel)) {
                     authButton.getScene().getWindow().hide();
                     repaint("/fxml/bitcoin.fxml", "Игра");
-                } else {
-                    emailLabel.setText("Аккаунт не найден");
                 }
             }
         });

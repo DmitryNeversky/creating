@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-abstract class Controller {
+abstract class Validator {
 
     void repaint(String dir, String name){
         FXMLLoader loader = new FXMLLoader();
@@ -24,7 +24,7 @@ abstract class Controller {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle(name);
-        stage.showAndWait();
+        stage.show();
     }
 
     boolean validEmail(String email, Label lbl){

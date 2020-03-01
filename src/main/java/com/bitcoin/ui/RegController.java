@@ -1,13 +1,12 @@
 package com.bitcoin.ui;
 
-import com.bitcoin.domain.Authorize;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class RegController extends Controller{
+public class RegController extends Validator {
 
     @FXML
     private PasswordField regPassword;
