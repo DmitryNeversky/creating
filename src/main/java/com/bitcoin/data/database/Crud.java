@@ -35,19 +35,20 @@ public class Crud {
         }
     }
 
-    public static String removeUser(Long id){
+    public static void removeUser(Long id){
         try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
+
             Query q = session.createQuery("delete Users where id = " + id);
             q.executeUpdate();
+
             session.getTransaction().commit();
-            return "Аккаунт удален!";
         } catch (Throwable cause){
-            return "Ошибка: " + cause;
+            cause.printStackTrace();
         }
     }
 
-    public static List getUser(String email) {
+    public static List<Users> getUser(String email) {
 
         List list = null;
 
@@ -63,10 +64,10 @@ public class Crud {
             cause.printStackTrace();
         }
 
-        return list;
+        return (List<Users>) list;
     }
 
-    public static List getUsers(){
+    public static List<Users> getUsers(){
 
         List list = null;
 
@@ -81,6 +82,6 @@ public class Crud {
             cause.printStackTrace();
         }
 
-        return list;
+        return (List<Users>) list;
     }
 }

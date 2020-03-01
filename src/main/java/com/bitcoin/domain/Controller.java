@@ -17,7 +17,7 @@ public class Controller {
     }
 
     public boolean auth(Label emailLabel, Label passwordLabel){
-        if(!findAccount()){
+        if(findAccount()){
             emailLabel.setText("Аккаунт не найден");
             return false;
         } else {
@@ -32,7 +32,7 @@ public class Controller {
     }
 
     public boolean registry(Label emailLabel){
-        if(!findAccount()) {
+        if(findAccount()) {
             Crud.addUser(email, password);
             return true;
         } else {
@@ -51,28 +51,18 @@ public class Controller {
                     search++;
                 }
             }
-            return search > 0;
+            return search <= 0;
         } else {
-            return false;
+            return true;
         }
     }
 
-//    public String removeAccount(){
-//        long id = 0;
-//        for(Users pair : list){
-//            if(pair.getEmail().equals(email)){
-//                if(identify()) {
-//                    id = pair.getId();
-//                } else {
-//                    return "Неверный пароль";
-//                }
-//            }
-//        }
-//        if(id == 0) return "Аккаунт не найден!";
-//        return Crud.removeUser(id);
-//    }
+    public static void removeAccount(String email){
+        List<Users> init = Crud.getUser(email);
 
-    // Не робит
+        for(Users pair : init)
+            Crud.removeUser(pair.getId());
+    }
 
     private boolean identify(){
         List<Users> initList = Crud.getUser(email);

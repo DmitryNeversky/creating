@@ -7,12 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
-
 public class AuthController extends Validator{
-
-    @FXML
-    private URL location;
 
     @FXML
     private TextField authEmail;
@@ -57,7 +52,7 @@ public class AuthController extends Validator{
 
         remButton.setOnAction(e -> {
             remButton.getScene().getWindow().hide();
-            repaint("/fxml/del.fxml", "Удаление");
+            repaint("/fxml/rem.fxml", "Удаление");
         });
     }
 }

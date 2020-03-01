@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8df5bb66-8673-482e-af24-7446950776ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/rem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RegController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/auth.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/auth.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/ui/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/auth.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/auth.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +153,9 @@
       <workItem from="1582991033943" duration="5219000" />
       <workItem from="1583004347473" duration="1785000" />
       <workItem from="1583059050323" duration="6057000" />
-      <workItem from="1583072831423" duration="3421000" />
+      <workItem from="1583072831423" duration="5698000" />
+      <workItem from="1583079499222" duration="8000" />
+      <workItem from="1583079534438" duration="722000" />
     </task>
     <task id="LOCAL-00001" summary="Hibernate">
       <created>1582359450192</created>
@@ -224,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583075485301</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="RemController">
+      <created>1583076516039</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1583076516039</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,6 +260,7 @@
     <MESSAGE value="Validate system" />
     <MESSAGE value="Hibernate bug" />
     <MESSAGE value="Hibernate debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hibernate debug" />
+    <MESSAGE value="RemController" />
+    <option name="LAST_COMMIT_MESSAGE" value="RemController" />
   </component>
 </project>
