@@ -17,6 +17,7 @@ public class Crud {
             Users user = new Users();
             user.setEmail(email);
             user.setPassword(password);
+            user.setMoney((long) 100);
 
             Printer printer = new Printer();
             printer.setLvl(1);
@@ -83,5 +84,16 @@ public class Crud {
         }
 
         return (List<Users>) list;
+    }
+
+    public static Printer getPrinter(String email){
+        List<Users> list = getUser(email);
+        Printer printer = null;
+
+        for(Users pair : list){
+            printer = pair.getPrinter();
+        }
+
+        return printer;
     }
 }

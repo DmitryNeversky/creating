@@ -11,7 +11,8 @@ public class Users {
     private String email;
     private String password;
 
-//    @JoinColumn (name="printer_id")
+    private Long money;
+
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Printer printer;
 
@@ -49,5 +50,13 @@ public class Users {
 
     public void setPrinter(Printer printer) {
         this.printer = printer;
+    }
+
+    public Long getMoney() {
+        return money;
+    }
+
+    public void setMoney(Long money) {
+        this.money = money;
     }
 }

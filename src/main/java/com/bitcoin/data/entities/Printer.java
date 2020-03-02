@@ -19,6 +19,14 @@ public class Printer {
 
     public Printer(){}
 
+    public Printer(int lvl, double income, int speed, int cooler, int memory) {
+        this.lvl = lvl;
+        this.income = income;
+        this.speed = speed;
+        this.cooler = cooler;
+        this.memory = memory;
+    }
+
     public Users getUsers() {
         return users;
     }

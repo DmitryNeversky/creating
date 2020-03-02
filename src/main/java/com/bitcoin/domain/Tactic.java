@@ -1,28 +1,27 @@
 package com.bitcoin.domain;
 
-class Tactic{
+public class Tactic{
+
     private Strategy strategy;
 
-    Tactic(Strategy strategy) {
+    public Tactic(Strategy strategy) {
         this.strategy = strategy;
     }
 
-    double upgradeIncome(double income){
+    public double upgradeIncome(double income){
         return strategy.upgradeIncome(income);
     }
 
-    int upgradeSpeed(int speed){
-        speed = strategy.upgradeSpeed(speed);
-        return speed;
+    public int upgradeSpeed(int speed){
+        return strategy.upgradeSpeed(speed);
     }
 
-    int upgradeCooler(int cooler){
-        cooler = strategy.upgradeSpeed(cooler);
+    public int upgradeCooler(int cooler){
+        cooler = strategy.upgradeCooler(cooler);
         return cooler;
     }
 
-    int upgradeMemory(int memory){
-        memory = strategy.upgradeSpeed(memory);
-        return memory;
+    public int upgradeMemory(int memory){
+        return strategy.upgradeMemory(memory);
     }
 }

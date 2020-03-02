@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class HibernateUtil {
+class HibernateUtil {
     private static final SessionFactory ourSessionFactory;
 
     static {
@@ -19,7 +19,7 @@ public class HibernateUtil {
         }
     }
 
-    public static Session getSession() throws HibernateException {
+    static Session getSession() throws HibernateException {
         return ourSessionFactory.openSession();
     }
 }

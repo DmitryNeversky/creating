@@ -32,7 +32,6 @@ public class AuthController extends Validator{
 
     @FXML
     void initialize() {
-
         authButton.setOnAction(e -> {
             String email = authEmail.getText();
             String password = authPassword.getText();
@@ -40,6 +39,7 @@ public class AuthController extends Validator{
             if(validEmail(email, emailLabel) && validPassword(password, passwordLabel)) {
                 if (new Controller(email, password).auth(emailLabel, passwordLabel)) {
                     authButton.getScene().getWindow().hide();
+                    GameController.email = email;
                     repaint("/fxml/bitcoin.fxml", "Игра");
                 }
             }
