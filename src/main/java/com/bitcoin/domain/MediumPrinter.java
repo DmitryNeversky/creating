@@ -18,8 +18,8 @@ public class MediumPrinter implements UpgradeStrategy{
     }
 
     @Override
-    public int upgradeMemory(int memory) {
-        return memory + 300;
+    public int upgradeMemory(int charge) {
+        return charge + 300;
     }
 
     @Override

@@ -13,19 +13,19 @@ public class Printer {
     private double income;
     private int speed;
     private int cooler;
-    private int memory;
+    private int charge;
 
     @OneToOne(mappedBy="printer")
     private Users users;
 
     public Printer(){}
 
-    public Printer(int lvl, double income, int speed, int cooler, int memory) {
+    public Printer(int lvl, double income, int speed, int cooler, int charge) {
         this.lvl = lvl;
         this.income = income;
         this.speed = speed;
         this.cooler = cooler;
-        this.memory = memory;
+        this.charge = charge;
     }
 
     public long getId() {
@@ -69,11 +69,11 @@ public class Printer {
     }
 
     public int getMemory() {
-        return memory;
+        return charge;
     }
 
-    public void setMemory(int memory) {
-        this.memory = memory;
+    public void setMemory(int charge) {
+        this.charge = charge;
     }
 
     public Users getUsers() {

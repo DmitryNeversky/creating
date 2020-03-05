@@ -2,6 +2,11 @@ package com.bitcoin.domain;
 
 public class LowPrinter implements UpgradeStrategy{
 
+    private double incomePrice;
+    private double speedPrice;
+    private double coolPrice;
+    private double chargePrice;
+
     @Override
     public double upgradeIncome(double income) {
         return income * 1.25;
@@ -18,8 +23,8 @@ public class LowPrinter implements UpgradeStrategy{
     }
 
     @Override
-    public int upgradeMemory(int memory) {
-        return memory + 100;
+    public int upgradeMemory(int charge) {
+        return charge + 100;
     }
 
     @Override

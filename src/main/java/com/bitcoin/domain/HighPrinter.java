@@ -18,8 +18,8 @@ public class HighPrinter implements UpgradeStrategy{
     }
 
     @Override
-    public int upgradeMemory(int memory) {
-        return memory + 500;
+    public int upgradeMemory(int charge) {
+        return charge + 500;
     }
 
     @Override

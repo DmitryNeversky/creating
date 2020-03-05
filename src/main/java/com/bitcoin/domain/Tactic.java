@@ -20,8 +20,8 @@ public class Tactic{
         return upgradeStrategy.upgradeCooler(cooler);
     }
 
-    public int upgradeMemory(int memory){
-        return upgradeStrategy.upgradeMemory(memory);
+    public int upgradeMemory(int charge){
+        return upgradeStrategy.upgradeMemory(charge);
     }
 
     public double incomePrice(double price){
