@@ -8,4 +8,6 @@ public interface UpgradeStrategy {
 
     double upIncomePrice(double incomePrice);
     double upSpeedPrice(double speedPrice);
+    double upCoolPrice(double coolPrice);
+    double upChargePrice(double chargePrice);
 }

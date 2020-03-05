@@ -31,4 +31,14 @@ public class LowPrinter implements UpgradeStrategy{
     public double upSpeedPrice(double speedPrice) {
         return speedPrice *= 1.4;
     }
+
+    @Override
+    public double upCoolPrice(double coolPrice) {
+        return coolPrice *= 1.7;
+    }
+
+    @Override
+    public double upChargePrice(double chargePrice) {
+        return chargePrice *= 1.1;
+    }
 }

@@ -14,11 +14,13 @@ public class Game {
     private volatile double money;
     private double income;
     private int speed;
+    private int cooler;
+    private int charge;
 
     private double incomePrice;
     private double speedPrice;
-    double coolPrice;
-    double chargePrice;
+    private double coolPrice;
+    private double chargePrice;
 
     private Tactic tactic;
 
@@ -28,15 +30,18 @@ public class Game {
         money = printer.getUsers().getMoney();
         income = printer.getIncome();
         speed = printer.getSpeed();
+        cooler = printer.getCooler();
+        charge = printer.getCharge();
 
         Price price = Crud.getPrice(email);
         incomePrice = price.getIncomePrice();
         speedPrice = price.getSpeedPrice();
+        coolPrice = price.getCoolerPrice();
+        chargePrice = price.getChargePrice();
     }
 
     // <Income, Speed>
     public void farm(){
-        System.out.println(incomePrice + " " + speedPrice);
         new Thread(() -> {
             while (true){
                 setMoney(getMoney() + income);
@@ -50,22 +55,23 @@ public class Game {
     }
 
     // <Buttons>
-    public void upgrades(Label total, Button btnIncome, Button btnSpeed){
+    public void upgrades(Label total, Button btnIncome, Button btnSpeed, Button btnCool, Button btnCharge){
         new Thread(() -> {
             while (true){
-                if(getMoney() < incomePrice){
-                    btnIncome.setDisable(true);
-                } else {
-                    btnIncome.setDisable(false);
-                }
 
-                if(getMoney() < speedPrice){
-                    btnSpeed.setDisable(true);
-                } else {
-                    btnSpeed.setDisable(false);
-                }
+                if(getMoney() < incomePrice) btnIncome.setDisable(true);
+                else btnIncome.setDisable(false);
 
-                // Recreate
+                if(getMoney() < speedPrice) btnSpeed.setDisable(true);
+                else btnSpeed.setDisable(false);
+
+                if(getMoney() < coolPrice) btnCool.setDisable(true);
+                else btnCool.setDisable(false);
+
+                if(getMoney() < chargePrice) btnCharge.setDisable(true);
+                else btnCharge.setDisable(false);
+
+                // Recreate + Flame + Voltage
                 Platform.runLater(() -> total.setText(String.format("%.2f", money)));
                 try {
                     Thread.sleep(10);
@@ -79,40 +85,36 @@ public class Game {
     public void initIncome(Label lblIncome){
         setMoney(money - incomePrice);
         income = tactic.upgradeIncome(income);
-        lblIncome.setText(String.format("%.2f", income));
+        lblIncome.setText("Добыча: " + String.format("%.2f", income));
         incomePrice = tactic.upIncomePrice(incomePrice);
-        System.out.println(incomePrice);
     }
 
-    public synchronized double getMoney() {
+    public void initSpeed(Label lblSpeed){
+        setMoney(money - speedPrice);
+        speed = tactic.upgradeSpeed(speed);
+        lblSpeed.setText("Задержка: "+ speed / 1000 + "," + speed % 1000 / 10 + " сек.");
+        speedPrice = tactic.upSpeedPrice(speedPrice);
+    }
+
+    public void initCool(Label lblCool){
+        setMoney(money - coolPrice);
+        cooler = tactic.upgradeCooler(cooler);
+        lblCool.setText("Охлаждение: " + cooler + " C");
+        coolPrice = tactic.upCoolPrice(coolPrice);
+    }
+
+    public void initCharge(Label lblCharge){
+        setMoney(money - chargePrice);
+        charge = tactic.upgradeCharge(charge);
+        lblCharge.setText("Заряд: " + charge + " Вт");
+        chargePrice = tactic.upChargePrice(chargePrice);
+    }
+
+    private synchronized double getMoney() {
         return money;
     }
 
-    public synchronized void setMoney(double money) {
+    private synchronized void setMoney(double money) {
         this.money = money;
-    }
-
-    public double getIncome() {
-        return income;
-    }
-
-    public void setIncome(double income) {
-        this.income = income;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public double getIncomePrice() {
-        return incomePrice;
-    }
-
-    public double getSpeedPrice() {
-        return speedPrice;
     }
 }

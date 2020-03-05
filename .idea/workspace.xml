@@ -10,10 +10,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Tactic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Tactic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/UpgradeStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/UpgradeStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/bitcoin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/bitcoin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/HighPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/HighPrinter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/LowPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/LowPrinter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/MediumPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/MediumPrinter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Tactic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Tactic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/bitcoin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/bitcoin.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +176,7 @@
       <workItem from="1583389725843" duration="5631000" />
       <workItem from="1583400785866" duration="12110000" />
       <workItem from="1583422460939" duration="3912000" />
-      <workItem from="1583427014661" duration="3920000" />
+      <workItem from="1583427014661" duration="6446000" />
     </task>
     <task id="LOCAL-00001" summary="Hibernate">
       <created>1582359450192</created>
@@ -309,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583417486038</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Creating logic price">
+      <created>1583431028325</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1583431028325</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +349,7 @@
     <MESSAGE value="Game" />
     <MESSAGE value="Begin create prices" />
     <MESSAGE value="Begin create logic price" />
-    <option name="LAST_COMMIT_MESSAGE" value="Begin create logic price" />
+    <MESSAGE value="Creating logic price" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating logic price" />
   </component>
 </project>

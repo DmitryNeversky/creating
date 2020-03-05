@@ -31,4 +31,14 @@ public class MediumPrinter implements UpgradeStrategy{
     public double upSpeedPrice(double speedPrice) {
         return 0;
     }
+
+    @Override
+    public double upCoolPrice(double coolPrice) {
+        return 0;
+    }
+
+    @Override
+    public double upChargePrice(double chargePrice) {
+        return 0;
+    }
 }

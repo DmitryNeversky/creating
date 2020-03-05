@@ -4,8 +4,6 @@ public class Tactic{
 
     private UpgradeStrategy upgradeStrategy;
 
-    Tactic(){}
-
     public Tactic(UpgradeStrategy strategy) {
         this.upgradeStrategy = strategy;
     }
@@ -32,5 +30,13 @@ public class Tactic{
 
     double upSpeedPrice(double speedPrice){
         return upgradeStrategy.upIncomePrice(speedPrice);
+    }
+
+    double upCoolPrice(double coolPrice){
+        return upgradeStrategy.upCoolPrice(coolPrice);
+    }
+
+    double upChargePrice(double chargePrice){
+        return upgradeStrategy.upChargePrice(chargePrice);
     }
 }

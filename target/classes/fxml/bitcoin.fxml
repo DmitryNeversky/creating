@@ -65,7 +65,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblMemory" text="Charge:">
+            <Label fx:id="lblCharge" text="Charge:">
                <font>
                   <Font size="16.0" />
                </font>

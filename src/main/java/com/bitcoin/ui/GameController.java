@@ -27,7 +27,7 @@ public class GameController {
     private Button btnSpeed;
 
     @FXML
-    private Label lblMemory;
+    private Label lblCharge;
 
     @FXML
     private Label lblTotal;
@@ -56,12 +56,22 @@ public class GameController {
 
         Game game = new Game(tactic);
         game.farm();
-        game.upgrades(lblTotal, btnIncome, btnSpeed);
-
-        lblSpeed.setText("Задержка " + game.getSpeed() + "/мс");
+        game.upgrades(lblTotal, btnIncome, btnSpeed, btnCharge);
 
         btnIncome.setOnAction(e -> {
             game.initIncome(lblIncome);
+        });
+
+        btnSpeed.setOnAction(e -> {
+            game.initSpeed(lblSpeed);
+        });
+
+        btnCooler.setOnAction(e -> {
+            game.initCool(lblCool);
+        });
+
+        btnCharge.setOnAction(e -> {
+            game.initCharge(lblCharge);
         });
     }
 }
