@@ -34,7 +34,7 @@ public class HighPrinter implements UpgradeStrategy{
     }
 
     @Override
-    public int upgradeMemory(int charge) {
+    public int upgradeCharge(int charge) {
         return charge + 300;
     }
 

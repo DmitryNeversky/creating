@@ -17,7 +17,6 @@ public class Tactic{
     }
 
     public int upgradeCooler(int cooler){
-        upgradeStrategy.incomePrice();
         return upgradeStrategy.upgradeCooler(cooler);
     }
 
