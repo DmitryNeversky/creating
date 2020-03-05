@@ -39,13 +39,23 @@ public class LowPrinter implements UpgradeStrategy{
     }
 
     @Override
-    public double incomePrice(double price) {
-        return price * 1.25;
+    public void upgradeIncomePrice() {
+        this.incomePrice *= 1.25;
     }
 
     @Override
-    public double speedPrice(double price) {
-        return price * 1.4;
+    public void upgradeSpeedPrice() {
+        this.speedPrice *= 1.4;
+    }
+
+    @Override
+    public void upgradeCoolPrice() {
+        this.coolPrice *= 1.3;
+    }
+
+    @Override
+    public void upgradeChargePrice() {
+        this.chargePrice *= 1.2;
     }
 
     public double getIncomePrice() {

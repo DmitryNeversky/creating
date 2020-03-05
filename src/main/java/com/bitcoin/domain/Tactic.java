@@ -17,18 +17,11 @@ public class Tactic{
     }
 
     public int upgradeCooler(int cooler){
+        upgradeStrategy.incomePrice();
         return upgradeStrategy.upgradeCooler(cooler);
     }
 
     public int upgradeMemory(int charge){
         return upgradeStrategy.upgradeMemory(charge);
-    }
-
-    public double incomePrice(double price){
-        return upgradeStrategy.incomePrice(price);
-    }
-
-    public double speedPrice(double price){
-        return upgradeStrategy.speedPrice(price);
     }
 }

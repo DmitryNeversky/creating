@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 public class Game {
 
     public static String email;
+    Tactic tactic;
 
     private double money;
     private double income;
