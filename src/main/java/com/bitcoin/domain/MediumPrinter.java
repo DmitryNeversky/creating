@@ -1,22 +1,6 @@
 package com.bitcoin.domain;
 
-import com.bitcoin.data.database.Crud;
-import com.bitcoin.data.entities.Price;
-
 public class MediumPrinter implements UpgradeStrategy{
-
-    private double incomePrice;
-    private double speedPrice;
-    private double coolPrice;
-    private double chargePrice;
-
-    public MediumPrinter(){
-        Price price = Crud.getPrice(Game.email);
-        this.incomePrice = price.getIncomePrice();
-        this.speedPrice = price.getSpeedPrice();
-        this.coolPrice = price.getCoolerPrice();
-        this.chargePrice = price.getChargePrice();
-    }
 
     @Override
     public double upgradeIncome(double income) {
@@ -38,19 +22,13 @@ public class MediumPrinter implements UpgradeStrategy{
         return charge + 200;
     }
 
-    public double getIncomePrice() {
-        return incomePrice;
+    @Override
+    public double upIncomePrice(double incomePrice) {
+        return 0;
     }
 
-    public double getSpeedPrice() {
-        return speedPrice;
-    }
-
-    public double getCoolPrice() {
-        return coolPrice;
-    }
-
-    public double getChargePrice() {
-        return chargePrice;
+    @Override
+    public double upSpeedPrice(double speedPrice) {
+        return 0;
     }
 }

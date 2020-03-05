@@ -1,36 +1,47 @@
 package com.bitcoin.domain;
 
 import com.bitcoin.data.database.Crud;
+import com.bitcoin.data.entities.Price;
 import com.bitcoin.data.entities.Printer;
+import javafx.application.Platform;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class Game {
 
     public static String email = "a@mail.ru";
 
-    private double money;
+    private volatile double money;
     private double income;
     private int speed;
 
-    double incomePrice;
-    double speedPrice;
+    private double incomePrice;
+    private double speedPrice;
     double coolPrice;
     double chargePrice;
 
-    public Game(){
+    private Tactic tactic;
+
+    public Game(Tactic tactic){
+        this.tactic = tactic;
         Printer printer = Crud.getPrinter(email);
         money = printer.getUsers().getMoney();
         income = printer.getIncome();
         speed = printer.getSpeed();
+
+        Price price = Crud.getPrice(email);
+        incomePrice = price.getIncomePrice();
+        speedPrice = price.getSpeedPrice();
     }
 
     // <Income, Speed>
     public void farm(){
+        System.out.println(incomePrice + " " + speedPrice);
         new Thread(() -> {
             while (true){
-                money += income;
+                setMoney(getMoney() + income);
                 try {
-                    Thread.sleep(speed);
+                    Thread.currentThread().join(speed);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -39,23 +50,25 @@ public class Game {
     }
 
     // <Buttons>
-    public void upgrades(Button btnIncome, Button btnSpeed){
+    public void upgrades(Label total, Button btnIncome, Button btnSpeed){
         new Thread(() -> {
             while (true){
-                if(money < incomePrice){
+                if(getMoney() < incomePrice){
                     btnIncome.setDisable(true);
                 } else {
                     btnIncome.setDisable(false);
                 }
 
-                if(money < speedPrice){
+                if(getMoney() < speedPrice){
                     btnSpeed.setDisable(true);
                 } else {
                     btnSpeed.setDisable(false);
                 }
 
+                // Recreate
+                Platform.runLater(() -> total.setText(String.format("%.2f", money)));
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(10);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -63,11 +76,19 @@ public class Game {
         }).start();
     }
 
-    public double getMoney() {
+    public void initIncome(Label lblIncome){
+        setMoney(money - incomePrice);
+        income = tactic.upgradeIncome(income);
+        lblIncome.setText(String.format("%.2f", income));
+        incomePrice = tactic.upIncomePrice(incomePrice);
+        System.out.println(incomePrice);
+    }
+
+    public synchronized double getMoney() {
         return money;
     }
 
-    public void setMoney(double money) {
+    public synchronized void setMoney(double money) {
         this.money = money;
     }
 
@@ -85,5 +106,13 @@ public class Game {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public double getIncomePrice() {
+        return incomePrice;
+    }
+
+    public double getSpeedPrice() {
+        return speedPrice;
     }
 }
