@@ -4,8 +4,9 @@ import javax.persistence.*;
 
 @Entity
 public class Printer {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private int lvl;
@@ -14,7 +15,7 @@ public class Printer {
     private int cooler;
     private int memory;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy="printer")
+    @OneToOne(mappedBy="printer")
     private Users users;
 
     public Printer(){}
@@ -25,14 +26,6 @@ public class Printer {
         this.speed = speed;
         this.cooler = cooler;
         this.memory = memory;
-    }
-
-    public Users getUsers() {
-        return users;
-    }
-
-    public void setUsers(Users users) {
-        this.users = users;
     }
 
     public long getId() {
@@ -81,5 +74,13 @@ public class Printer {
 
     public void setMemory(int memory) {
         this.memory = memory;
+    }
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

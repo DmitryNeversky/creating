@@ -10,8 +10,6 @@ import javafx.scene.image.ImageView;
 
 public class GameController {
 
-    public static String email;
-
     @FXML
     private Label lblSpeed;
 
@@ -53,20 +51,26 @@ public class GameController {
 
     @FXML
     void initialize() {
-        Game game = new Game(email);
         Tactic tactic = new Tactic(new LowPrinter());
+
+        Game game = new Game();
         game.farm(lblTotal);
+        game.upgrades(btnIncome, btnSpeed);
 
-        btnPrinter.setOnAction(e -> {
-
-        });
+        lblTotal.setText(String.format("%.2f", game.getMoney()));
+        lblIncome.setText("Добыча " + String.format("%.2f", game.getIncome()));
+        lblSpeed.setText("Задержка " + game.getSpeed() + "/мс");
 
         btnIncome.setOnAction(e -> {
             game.setIncome(tactic.upgradeIncome(game.getIncome()));
+            game.setIncomePrice(tactic.incomePrice(game.getIncomePrice()));
+            lblIncome.setText("Добыча " + String.format("%.2f", game.getIncome()));
         });
 
         btnSpeed.setOnAction(e -> {
             game.setSpeed(tactic.upgradeSpeed(game.getSpeed()));
+            game.setSpeedPrice(tactic.speedPrice(game.getSpeedPrice()));
+            lblSpeed.setText("Задержка " + game.getSpeed() + "/мс");
         });
     }
 }

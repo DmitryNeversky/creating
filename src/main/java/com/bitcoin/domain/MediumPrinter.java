@@ -1,6 +1,6 @@
 package com.bitcoin.domain;
 
-public class MediumPrinter implements Strategy{
+public class MediumPrinter implements UpgradeStrategy{
 
     @Override
     public double upgradeIncome(double income) {
@@ -20,5 +20,15 @@ public class MediumPrinter implements Strategy{
     @Override
     public int upgradeMemory(int memory) {
         return memory + 300;
+    }
+
+    @Override
+    public double incomePrice(double price) {
+        return price * 1.4;
+    }
+
+    @Override
+    public double speedPrice(double price) {
+        return price * 1.5;
     }
 }

@@ -1,6 +1,7 @@
 package com.bitcoin.ui;
 
 import com.bitcoin.domain.Controller;
+import com.bitcoin.domain.Game;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -39,7 +40,7 @@ public class AuthController extends Validator{
             if(validEmail(email, emailLabel) && validPassword(password, passwordLabel)) {
                 if (new Controller(email, password).auth(emailLabel, passwordLabel)) {
                     authButton.getScene().getWindow().hide();
-                    GameController.email = email;
+                    Game.email = email;
                     repaint("/fxml/bitcoin.fxml", "Игра");
                 }
             }

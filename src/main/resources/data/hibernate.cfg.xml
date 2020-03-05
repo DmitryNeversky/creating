@@ -13,5 +13,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="com.bitcoin.data.entities.Users"/>
         <mapping class="com.bitcoin.data.entities.Printer"/>
+        <mapping class="com.bitcoin.data.entities.Price"/>
     </session-factory>
 </hibernate-configuration>

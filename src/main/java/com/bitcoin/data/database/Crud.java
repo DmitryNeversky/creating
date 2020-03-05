@@ -1,5 +1,6 @@
 package com.bitcoin.data.database;
 
+import com.bitcoin.data.entities.Price;
 import com.bitcoin.data.entities.Printer;
 import com.bitcoin.data.entities.Users;
 import org.hibernate.Session;
@@ -14,20 +15,15 @@ public class Crud {
         try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
 
-            Users user = new Users();
-            user.setEmail(email);
-            user.setPassword(password);
-            user.setMoney((long) 100);
+            Users user = new Users(email, password);
+            user.setMoney(100);
 
-            Printer printer = new Printer();
-            printer.setLvl(1);
-            printer.setIncome(1);
-            printer.setSpeed(2000);
-            printer.setCooler(10);
-            printer.setMemory(1000);
-            //printer.setUsers(user);
+            Printer printer = new Printer(1, 1, 2000, 10, 1000);
+
+            Price price = new Price(10, 15, 20 ,10);
 
             user.setPrinter(printer);
+            user.setPrice(price);
 
             session.save(user);
             session.getTransaction().commit();
@@ -95,5 +91,16 @@ public class Crud {
         }
 
         return printer;
+    }
+
+    public static Price getPrice(String email){
+        List<Users> list = getUser(email);
+        Price price = null;
+
+        for(Users pair : list){
+            price = pair.getPrice();
+        }
+
+        return price;
     }
 }
