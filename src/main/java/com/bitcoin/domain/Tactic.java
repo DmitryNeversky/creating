@@ -21,6 +21,6 @@ public class Tactic{
     }
 
     public int upgradeMemory(int charge){
-        return upgradeStrategy.upgradeMemory(charge);
+        return upgradeStrategy.upgradeCharge(charge);
     }
 }

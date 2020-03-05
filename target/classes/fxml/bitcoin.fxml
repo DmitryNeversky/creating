@@ -26,7 +26,7 @@
             </Button>
             <Button fx:id="btnSpeed" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Speed" />
             <Button fx:id="btnCooler" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Cooler" />
-            <Button fx:id="btnMemory" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Memory" />
+            <Button fx:id="btnCharge" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Charge" />
             <Button fx:id="btnPrinter" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Printer">
                <VBox.margin>
                   <Insets top="20.0" />
@@ -65,7 +65,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="lblMemory" text="Memory:">
+            <Label fx:id="lblMemory" text="Charge:">
                <font>
                   <Font size="16.0" />
                </font>

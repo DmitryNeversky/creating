@@ -2,18 +2,20 @@ package com.bitcoin.domain;
 
 import com.bitcoin.data.database.Crud;
 import com.bitcoin.data.entities.Printer;
-import javafx.application.Platform;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
 public class Game {
 
-    public static String email;
-    Tactic tactic;
+    public static String email = "a@mail.ru";
 
     private double money;
     private double income;
     private int speed;
+
+    double incomePrice;
+    double speedPrice;
+    double coolPrice;
+    double chargePrice;
 
     public Game(){
         Printer printer = Crud.getPrinter(email);
@@ -22,11 +24,11 @@ public class Game {
         speed = printer.getSpeed();
     }
 
-    public void farm(Label totalLabel){
+    // <Income, Speed>
+    public void farm(){
         new Thread(() -> {
             while (true){
                 money += income;
-                Platform.runLater(() -> totalLabel.setText(String.format("%.2f", money)) );
                 try {
                     Thread.sleep(speed);
                 } catch (InterruptedException e) {
@@ -36,24 +38,29 @@ public class Game {
         }).start();
     }
 
-    // Разработка
-
+    // <Buttons>
     public void upgrades(Button btnIncome, Button btnSpeed){
-        new Thread(() -> Platform.runLater(() -> {
+        new Thread(() -> {
+            while (true){
+                if(money < incomePrice){
+                    btnIncome.setDisable(true);
+                } else {
+                    btnIncome.setDisable(false);
+                }
 
-//            if(money < incomePrice){
-//                btnIncome.setDisable(true);
-//            } else {
-//                btnIncome.setDisable(false);
-//            }
-//
-//            if(money < speedPrice){
-//                btnSpeed.setDisable(true);
-//            } else {
-//                btnSpeed.setDisable(false);
-//            }
+                if(money < speedPrice){
+                    btnSpeed.setDisable(true);
+                } else {
+                    btnSpeed.setDisable(false);
+                }
 
-        })).start();
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     public double getMoney() {

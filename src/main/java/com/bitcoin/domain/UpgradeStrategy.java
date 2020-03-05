@@ -5,8 +5,4 @@ public interface UpgradeStrategy {
     int upgradeSpeed(int speed);
     int upgradeCooler(int cooler);
     int upgradeCharge(int charge);
-    void upgradeIncomePrice();
-    void upgradeSpeedPrice();
-    void upgradeCoolPrice();
-    void upgradeChargePrice();
 }

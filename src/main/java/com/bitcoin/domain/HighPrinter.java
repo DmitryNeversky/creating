@@ -38,26 +38,6 @@ public class HighPrinter implements UpgradeStrategy{
         return charge + 300;
     }
 
-    @Override
-    public void upgradeIncomePrice() {
-        this.incomePrice *= 2;
-    }
-
-    @Override
-    public void upgradeSpeedPrice() {
-        this.speedPrice *= 3;
-    }
-
-    @Override
-    public void upgradeCoolPrice() {
-        this.coolPrice *= 4;
-    }
-
-    @Override
-    public void upgradeChargePrice() {
-        this.chargePrice *= 5;
-    }
-
     public double getIncomePrice() {
         return incomePrice;
     }

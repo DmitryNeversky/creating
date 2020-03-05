@@ -38,26 +38,6 @@ public class MediumPrinter implements UpgradeStrategy{
         return charge + 200;
     }
 
-    @Override
-    public void upgradeIncomePrice() {
-        this.incomePrice *= 1.6;
-    }
-
-    @Override
-    public void upgradeSpeedPrice() {
-        this.speedPrice *= 1.9;
-    }
-
-    @Override
-    public void upgradeCoolPrice() {
-        this.coolPrice *= 1.5;
-    }
-
-    @Override
-    public void upgradeChargePrice() {
-        this.chargePrice *= 1.2;
-    }
-
     public double getIncomePrice() {
         return incomePrice;
     }

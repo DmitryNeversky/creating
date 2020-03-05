@@ -32,7 +32,7 @@ public class GameController {
     private Label lblTotal;
 
     @FXML
-    private Button btnMemory;
+    private Button btnCharge;
 
     @FXML
     private Label lblCool;
@@ -54,7 +54,7 @@ public class GameController {
         Tactic tactic = new Tactic(new LowPrinter());
 
         Game game = new Game();
-        game.farm(lblTotal);
+        game.farm();
         game.upgrades(btnIncome, btnSpeed);
 
         lblTotal.setText(String.format("%.2f", game.getMoney()));
@@ -62,6 +62,8 @@ public class GameController {
         lblSpeed.setText("Задержка " + game.getSpeed() + "/мс");
 
         btnIncome.setOnAction(e -> {
+            lblTotal.setText(String.valueOf(game.getMoney()));
+            game.setMoney(game.getMoney() - 50);
             game.setIncome(tactic.upgradeIncome(game.getIncome()));
             lblIncome.setText("Добыча " + String.format("%.2f", game.getIncome()));
         });
