@@ -1,7 +1,6 @@
 package com.bitcoin.domain;
 
 import com.bitcoin.data.database.Crud;
-import com.bitcoin.data.entities.Price;
 import com.bitcoin.data.entities.Printer;
 import javafx.application.Platform;
 import javafx.scene.control.Button;
@@ -15,16 +14,8 @@ public class Game {
     private double income;
     private int speed;
 
-    // Мигрировать прайсы по принтерам
-
-    private double incomePrice;
-    private double speedPrice;
-
     public Game(){
         Printer printer = Crud.getPrinter(email);
-        Price price = Crud.getPrice(email);
-        incomePrice = price.getIncomePrice();
-        speedPrice = price.getSpeedPrice();
         money = printer.getUsers().getMoney();
         income = printer.getIncome();
         speed = printer.getSpeed();
@@ -44,20 +35,22 @@ public class Game {
         }).start();
     }
 
+    // Разработка
+
     public void upgrades(Button btnIncome, Button btnSpeed){
         new Thread(() -> Platform.runLater(() -> {
 
-            if(money < incomePrice){
-                btnIncome.setDisable(true);
-            } else {
-                btnIncome.setDisable(false);
-            }
-
-            if(money < speedPrice){
-                btnSpeed.setDisable(true);
-            } else {
-                btnSpeed.setDisable(false);
-            }
+//            if(money < incomePrice){
+//                btnIncome.setDisable(true);
+//            } else {
+//                btnIncome.setDisable(false);
+//            }
+//
+//            if(money < speedPrice){
+//                btnSpeed.setDisable(true);
+//            } else {
+//                btnSpeed.setDisable(false);
+//            }
 
         })).start();
     }
@@ -84,21 +77,5 @@ public class Game {
 
     public void setSpeed(int speed) {
         this.speed = speed;
-    }
-
-    public double getIncomePrice() {
-        return incomePrice;
-    }
-
-    public void setIncomePrice(double incomePrice) {
-        this.incomePrice = incomePrice;
-    }
-
-    public double getSpeedPrice() {
-        return speedPrice;
-    }
-
-    public void setSpeedPrice(double speedPrice) {
-        this.speedPrice = speedPrice;
     }
 }

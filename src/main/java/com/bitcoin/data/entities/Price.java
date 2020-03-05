@@ -12,7 +12,7 @@ public class Price {
     private double incomePrice;
     private double speedPrice;
     private double coolerPrice;
-    private double memoryPrice;
+    private double chargePrice;
 
     @OneToOne(mappedBy="price")
     private Users users;
@@ -21,11 +21,11 @@ public class Price {
 
     }
 
-    public Price(double incomePrice, double speedPrice, double coolerPrice, double memoryPrice) {
+    public Price(double incomePrice, double speedPrice, double coolerPrice, double chargePrice) {
         this.incomePrice = incomePrice;
         this.speedPrice = speedPrice;
         this.coolerPrice = coolerPrice;
-        this.memoryPrice = memoryPrice;
+        this.chargePrice = chargePrice;
     }
 
     public long getId() {
@@ -60,12 +60,12 @@ public class Price {
         this.coolerPrice = coolerPrice;
     }
 
-    public double getMemoryPrice() {
-        return memoryPrice;
+    public double getChargePrice() {
+        return chargePrice;
     }
 
-    public void setMemoryPrice(double memoryPrice) {
-        this.memoryPrice = memoryPrice;
+    public void setChargePrice(double chargePrice) {
+        this.chargePrice = chargePrice;
     }
 
     public Users getUsers() {

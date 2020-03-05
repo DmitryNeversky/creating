@@ -63,13 +63,11 @@ public class GameController {
 
         btnIncome.setOnAction(e -> {
             game.setIncome(tactic.upgradeIncome(game.getIncome()));
-            game.setIncomePrice(tactic.incomePrice(game.getIncomePrice()));
             lblIncome.setText("Добыча " + String.format("%.2f", game.getIncome()));
         });
 
         btnSpeed.setOnAction(e -> {
             game.setSpeed(tactic.upgradeSpeed(game.getSpeed()));
-            game.setSpeedPrice(tactic.speedPrice(game.getSpeedPrice()));
             lblSpeed.setText("Задержка " + game.getSpeed() + "/мс");
         });
     }

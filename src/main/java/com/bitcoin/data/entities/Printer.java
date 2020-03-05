@@ -68,11 +68,11 @@ public class Printer {
         this.cooler = cooler;
     }
 
-    public int getMemory() {
+    public int getCharge() {
         return charge;
     }
 
-    public void setMemory(int charge) {
+    public void setCharge(int charge) {
         this.charge = charge;
     }
 
