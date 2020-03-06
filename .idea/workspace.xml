@@ -5,10 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" afterDir="false" />
     </list>
@@ -172,7 +169,9 @@
       <workItem from="1583400785866" duration="12110000" />
       <workItem from="1583422460939" duration="3912000" />
       <workItem from="1583427014661" duration="6514000" />
-      <workItem from="1583470606396" duration="5089000" />
+      <workItem from="1583470606396" duration="5131000" />
+      <workItem from="1583476456219" duration="4032000" />
+      <workItem from="1583482367077" duration="6026000" />
     </task>
     <task id="LOCAL-00001" summary="Hibernate">
       <created>1582359450192</created>
@@ -321,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583433514817</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Begin to update DataBase">
+      <created>1583475770055</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1583475770055</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +360,7 @@
     <MESSAGE value="Begin create logic price" />
     <MESSAGE value="Creating logic price" />
     <MESSAGE value="Begin to create Flame + Voltage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Begin to create Flame + Voltage" />
+    <MESSAGE value="Begin to update DataBase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begin to update DataBase" />
   </component>
 </project>

@@ -14,7 +14,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/bitcoin.fxml"));
         primaryStage.setTitle("Authorize");
         primaryStage.setScene(new Scene(root, 600, 400));
-        primaryStage.setOnCloseRequest(e -> new Game().stop());
+        primaryStage.setOnCloseRequest(e -> Game.stop());
         primaryStage.show();
     }
 

@@ -3,6 +3,7 @@ package com.bitcoin.domain;
 import com.bitcoin.data.database.Crud;
 import com.bitcoin.data.entities.Price;
 import com.bitcoin.data.entities.Printer;
+import com.bitcoin.data.entities.Users;
 import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -14,49 +15,49 @@ public class Game {
 
     public static String email = "a@mail.ru";
 
-    private volatile double money;
-    private int lvl;
-    private double income;
-    private int speed;
-    private int cooler;
-    private int charge;
+    private static volatile double money;
+    private static int lvl;
+    private static double income;
+    private static int speed;
+    private static int cooler;
+    private static int charge;
 
-    private double incomePrice;
-    private double speedPrice;
-    private double coolPrice;
-    private double chargePrice;
+    private static double incomePrice;
+    private static double speedPrice;
+    private static double coolPrice;
+    private static double chargePrice;
 
-    private List<Thread> list = new ArrayList<>();
+    private static List<Thread> list = new ArrayList<>();
     private static boolean stop = true;
 
     private Tactic tactic;
 
+    private static Printer printer;
+
+    private static Price price;
+
     public Game(Tactic tactic){
         this.tactic = tactic;
 
-        Printer printer = Crud.getPrinter(email);
+        printer = Crud.getPrinter(email);
         money = printer.getUsers().getMoney();
         income = printer.getIncome();
         speed = printer.getSpeed();
         cooler = printer.getCooler();
         charge = printer.getCharge();
 
-        Price price = Crud.getPrice(email);
+        price = Crud.getPrice(email);
         incomePrice = price.getIncomePrice();
         speedPrice = price.getSpeedPrice();
         coolPrice = price.getCoolerPrice();
         chargePrice = price.getChargePrice();
     }
 
-    public Game() {
-
-    }
-
     // <Income, Speed>
     public void farm(){
         Thread thread = new Thread(() -> {
             while (stop){
-                setMoney(getMoney() + income);
+                setMoney(money + income);
                 try {
                     Thread.currentThread().join(speed);
                 } catch (InterruptedException e) {
@@ -72,16 +73,16 @@ public class Game {
         Thread  thread = new Thread(() -> {
             while (stop){
 
-                if(getMoney() < incomePrice) btnIncome.setDisable(true);
+                if(money < incomePrice) btnIncome.setDisable(true);
                 else btnIncome.setDisable(false);
 
-                if(getMoney() < speedPrice) btnSpeed.setDisable(true);
+                if(money < speedPrice) btnSpeed.setDisable(true);
                 else btnSpeed.setDisable(false);
 
-                if(getMoney() < coolPrice) btnCool.setDisable(true);
+                if(money < coolPrice) btnCool.setDisable(true);
                 else btnCool.setDisable(false);
 
-                if(getMoney() < chargePrice) btnCharge.setDisable(true);
+                if(money < chargePrice) btnCharge.setDisable(true);
                 else btnCharge.setDisable(false);
 
                 // Recreate + Flame + Voltage
@@ -102,7 +103,7 @@ public class Game {
         }
     }
 
-    public void stop(){
+    public static void stop(){
         stop = false;
         for(Thread pair : list){
             try {
@@ -114,9 +115,16 @@ public class Game {
         saveUser();
     }
 
-    private void saveUser(){
-        Printer printer = new Printer(lvl, income, speed, cooler, charge);
-        Price price = new Price(incomePrice, speedPrice, coolPrice, chargePrice);
+    private static void saveUser(){
+        printer.setIncome(income);
+        printer.setSpeed(speed);
+        printer.setCooler(cooler);
+        printer.setCharge(charge);
+
+        price.setIncomePrice(incomePrice);
+        price.setSpeedPrice(speedPrice);
+        price.setCoolerPrice(coolPrice);
+        price.setChargePrice(chargePrice);
         Crud.saveUser(email, money, printer, price);
     }
 

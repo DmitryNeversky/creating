@@ -29,12 +29,6 @@ public class Users {
         this.password = password;
     }
 
-    public Users(double money, Printer printer, Price price) {
-        this.money = money;
-        this.printer = printer;
-        this.price = price;
-    }
-
     public void setId(long id) {
         this.id = id;
     }

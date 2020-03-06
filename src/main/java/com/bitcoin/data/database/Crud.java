@@ -36,7 +36,11 @@ public class Crud {
         try (Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
 
+            session.update(printer);
+            session.update(price);
 
+            session.createQuery("UPDATE Users SET money=" + money + " where email= :emailParam")
+                    .setParameter("emailParam", email).executeUpdate();
 
             session.getTransaction().commit();
         } catch (Throwable cause) {
