@@ -1,5 +1,6 @@
 package com.bitcoin;
 
+import com.bitcoin.domain.Game;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/bitcoin.fxml"));
         primaryStage.setTitle("Authorize");
         primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setOnCloseRequest(e -> new Game().stop());
         primaryStage.show();
     }
 

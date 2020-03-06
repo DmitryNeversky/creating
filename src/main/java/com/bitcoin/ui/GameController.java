@@ -4,10 +4,13 @@ import com.bitcoin.domain.Game;
 import com.bitcoin.domain.LowPrinter;
 import com.bitcoin.domain.Tactic;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class GameController {
 
@@ -56,7 +59,8 @@ public class GameController {
 
         Game game = new Game(tactic);
         game.farm();
-        game.upgrades(lblTotal, btnIncome, btnSpeed, btnCharge);
+        game.upgrades(lblTotal, btnIncome, btnSpeed, btnCooler, btnCharge);
+        game.run();
 
         btnIncome.setOnAction(e -> {
             game.initIncome(lblIncome);

@@ -32,6 +32,18 @@ public class Crud {
         }
     }
 
+    public static void saveUser(String email, double money, Printer printer, Price price){
+        try (Session session = HibernateUtil.getSession()) {
+            session.beginTransaction();
+
+
+
+            session.getTransaction().commit();
+        } catch (Throwable cause) {
+            cause.printStackTrace();
+        }
+    }
+
     public static void removeUser(Long id){
         try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();

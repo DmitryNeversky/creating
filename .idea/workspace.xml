@@ -3,19 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="8df5bb66-8673-482e-af24-7446950776ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/HighPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/HighPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/LowPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/LowPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/MediumPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/MediumPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Tactic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Tactic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/UpgradeStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/UpgradeStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/bitcoin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/bitcoin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/HighPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/HighPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/LowPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/LowPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/MediumPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/MediumPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Tactic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Tactic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/bitcoin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/bitcoin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +171,8 @@
       <workItem from="1583389725843" duration="5631000" />
       <workItem from="1583400785866" duration="12110000" />
       <workItem from="1583422460939" duration="3912000" />
-      <workItem from="1583427014661" duration="6446000" />
+      <workItem from="1583427014661" duration="6514000" />
+      <workItem from="1583470606396" duration="5089000" />
     </task>
     <task id="LOCAL-00001" summary="Hibernate">
       <created>1582359450192</created>
@@ -318,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583431028325</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Begin to create Flame + Voltage">
+      <created>1583433514817</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1583433514817</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +353,7 @@
     <MESSAGE value="Begin create prices" />
     <MESSAGE value="Begin create logic price" />
     <MESSAGE value="Creating logic price" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating logic price" />
+    <MESSAGE value="Begin to create Flame + Voltage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begin to create Flame + Voltage" />
   </component>
 </project>

@@ -24,6 +24,7 @@ abstract class Validator {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle(name);
+        stage.setOnCloseRequest(e -> System.out.println("Stage is closing"));
         stage.show();
     }
 

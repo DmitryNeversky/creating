@@ -12,7 +12,7 @@ public class Users {
     private String email;
     private String password;
 
-    private Integer money;
+    private double money;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Printer printer;
@@ -29,11 +29,17 @@ public class Users {
         this.password = password;
     }
 
+    public Users(double money, Printer printer, Price price) {
+        this.money = money;
+        this.printer = printer;
+        this.price = price;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
 
-    public void setMoney(Integer money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
@@ -57,7 +63,7 @@ public class Users {
         return password;
     }
 
-    public Integer getMoney() {
+    public double getMoney() {
         return money;
     }
 
