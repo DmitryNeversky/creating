@@ -1,6 +1,7 @@
 package com.bitcoin.ui;
 
 import com.bitcoin.domain.Controller;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,7 +32,7 @@ public class RegController extends Validator {
             String password = regPassword.getText();
 
             if(validEmail(email, emailLabel) && validPassword(password, passwordLabel)) {
-                if (new Controller(email, password).registry(emailLabel)) {
+                if(new Controller(email, password).registry(emailLabel)) {
                     regButton.getScene().getWindow().hide();
                     repaint("/fxml/auth.fxml", "Авторизация");
                 }

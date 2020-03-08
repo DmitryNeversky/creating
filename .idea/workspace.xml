@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8df5bb66-8673-482e-af24-7446950776ee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/Printer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RegController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RemController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +172,7 @@
       <workItem from="1583482367077" duration="8889000" />
       <workItem from="1583518413156" duration="2389000" />
       <workItem from="1583597922662" duration="1414000" />
-      <workItem from="1583652727428" duration="11543000" />
+      <workItem from="1583652727428" duration="12230000" />
     </task>
     <task id="LOCAL-00001" summary="Hibernate">
       <created>1582359450192</created>
@@ -346,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583657261844</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Refresh Controller">
+      <created>1583672550865</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1583672550865</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +395,7 @@
     <MESSAGE value="Begin to update DataBase" />
     <MESSAGE value="Ends create update" />
     <MESSAGE value="Refresh Crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refresh Crud" />
+    <MESSAGE value="Refresh Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refresh Controller" />
   </component>
 </project>

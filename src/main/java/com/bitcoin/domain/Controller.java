@@ -53,7 +53,6 @@ public class Controller {
         }
     }
 
-    // Доварить
     public void removeAccount(){
         Crud.removeUser(email);
     }

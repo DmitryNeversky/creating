@@ -3,6 +3,7 @@ package com.bitcoin.data.database;
 import com.bitcoin.data.entities.Price;
 import com.bitcoin.data.entities.Printer;
 import com.bitcoin.data.entities.Users;
+
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
