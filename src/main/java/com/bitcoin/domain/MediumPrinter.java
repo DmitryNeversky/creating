@@ -41,4 +41,14 @@ public class MediumPrinter implements UpgradeStrategy{
     public double upChargePrice(double chargePrice) {
         return 0;
     }
+
+    @Override
+    public int upFire(int flame) {
+        return flame + 6;
+    }
+
+    @Override
+    public int upCool(int cool) {
+        return cool + 10;
+    }
 }

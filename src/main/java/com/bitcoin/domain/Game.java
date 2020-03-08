@@ -3,13 +3,14 @@ package com.bitcoin.domain;
 import com.bitcoin.data.database.Crud;
 import com.bitcoin.data.entities.Price;
 import com.bitcoin.data.entities.Printer;
-import com.bitcoin.data.entities.Users;
+
 import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Game {
 
@@ -21,6 +22,15 @@ public class Game {
     private static int speed;
     private static int cooler;
     private static int charge;
+
+    private static int lvlIncome;
+    private static int lvlSpeed;
+    private static int lvlCool;
+    private static int lvlCharge;
+
+    private static int flame;
+    private static int cool;
+    private static int voltage;
 
     private static double incomePrice;
     private static double speedPrice;
@@ -73,16 +83,16 @@ public class Game {
         Thread  thread = new Thread(() -> {
             while (stop){
 
-                if(money < incomePrice) btnIncome.setDisable(true);
+                if(money < incomePrice && lvlIncome <= 50) btnIncome.setDisable(true);
                 else btnIncome.setDisable(false);
 
-                if(money < speedPrice) btnSpeed.setDisable(true);
+                if(money < speedPrice && lvlSpeed <= 50) btnSpeed.setDisable(true);
                 else btnSpeed.setDisable(false);
 
-                if(money < coolPrice) btnCool.setDisable(true);
+                if(money < coolPrice && lvlCool <= 50) btnCool.setDisable(true);
                 else btnCool.setDisable(false);
 
-                if(money < chargePrice) btnCharge.setDisable(true);
+                if(money < chargePrice && lvlCharge <= 50) btnCharge.setDisable(true);
                 else btnCharge.setDisable(false);
 
                 // Recreate + Flame + Voltage
@@ -133,6 +143,8 @@ public class Game {
         income = tactic.upgradeIncome(income);
         lblIncome.setText("Добыча: " + String.format("%.2f", income));
         incomePrice = tactic.upIncomePrice(incomePrice);
+        flame = tactic.upFlame(flame);
+        lvlIncome++;
     }
 
     public void initSpeed(Label lblSpeed){
@@ -140,6 +152,8 @@ public class Game {
         speed = tactic.upgradeSpeed(speed);
         lblSpeed.setText("Задержка: "+ speed / 1000 + "," + speed % 1000 / 10 + " сек.");
         speedPrice = tactic.upSpeedPrice(speedPrice);
+        flame = tactic.upFlame(flame);
+        lvlSpeed++;
     }
 
     public void initCool(Label lblCool){
@@ -147,6 +161,8 @@ public class Game {
         cooler = tactic.upgradeCooler(cooler);
         lblCool.setText("Охлаждение: " + cooler + " C");
         coolPrice = tactic.upCoolPrice(coolPrice);
+        cool = tactic.upCool(cool);
+        lvlCool++;
     }
 
     public void initCharge(Label lblCharge){
@@ -154,13 +170,16 @@ public class Game {
         charge = tactic.upgradeCharge(charge);
         lblCharge.setText("Заряд: " + charge + " Вт");
         chargePrice = tactic.upChargePrice(chargePrice);
+        lvlCharge++;
     }
 
-    private synchronized double getMoney() {
-        return money;
+    // Thread
+    public void initFlame(Label lblFlame){
+        int abs = new Random().nextInt(cool - flame);
+        lblFlame.setText("Flame: " + abs);
     }
 
     private synchronized void setMoney(double money) {
-        this.money = money;
+        Game.money = money;
     }
 }

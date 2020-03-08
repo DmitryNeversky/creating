@@ -3,11 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="8df5bb66-8673-482e-af24-7446950776ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/database/Crud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Price.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/data/entities/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/HighPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/HighPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/LowPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/LowPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/MediumPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/MediumPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Tactic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/Tactic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/UpgradeStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/domain/UpgradeStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bitcoin/ui/RemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/database/Crud.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/Printer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/data/entities/Printer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/HighPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/HighPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/LowPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/LowPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/MediumPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/MediumPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Tactic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bitcoin/domain/Tactic.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +185,10 @@
       <workItem from="1583427014661" duration="6514000" />
       <workItem from="1583470606396" duration="5131000" />
       <workItem from="1583476456219" duration="4032000" />
-      <workItem from="1583482367077" duration="6026000" />
+      <workItem from="1583482367077" duration="8889000" />
+      <workItem from="1583518413156" duration="2389000" />
+      <workItem from="1583597922662" duration="1414000" />
+      <workItem from="1583652727428" duration="3432000" />
     </task>
     <task id="LOCAL-00001" summary="Hibernate">
       <created>1582359450192</created>
@@ -327,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583475770055</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Ends create update">
+      <created>1583498670275</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1583498670279</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,6 +385,7 @@
     <MESSAGE value="Creating logic price" />
     <MESSAGE value="Begin to create Flame + Voltage" />
     <MESSAGE value="Begin to update DataBase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Begin to update DataBase" />
+    <MESSAGE value="Ends create update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ends create update" />
   </component>
 </project>

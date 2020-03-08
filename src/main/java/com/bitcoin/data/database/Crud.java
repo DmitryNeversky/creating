@@ -4,9 +4,6 @@ import com.bitcoin.data.entities.Price;
 import com.bitcoin.data.entities.Printer;
 import com.bitcoin.data.entities.Users;
 import org.hibernate.Session;
-import org.hibernate.query.Query;
-
-import java.util.List;
 
 public class Crud {
 
@@ -15,17 +12,12 @@ public class Crud {
         try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
 
-            Users user = new Users(email, password);
-            user.setMoney(100);
-
-            Printer printer = new Printer(1, 1, 2000, 10, 1000);
+            Printer printer = new Printer(1, 1, 2000, 40, 1000);
 
             Price price = new Price(10, 15, 20 ,10);
 
-            user.setPrinter(printer);
-            user.setPrice(price);
+            session.save(new Users(email, password, 100, printer, price));
 
-            session.save(user);
             session.getTransaction().commit();
         } catch (Throwable cause){
             cause.printStackTrace();
@@ -39,8 +31,9 @@ public class Crud {
             session.update(printer);
             session.update(price);
 
-            session.createQuery("UPDATE Users SET money=" + money + " where email= :emailParam")
-                    .setParameter("emailParam", email).executeUpdate();
+            Users user = session.byNaturalId(Users.class).using("email", email).load();
+
+            user.setMoney(money);
 
             session.getTransaction().commit();
         } catch (Throwable cause) {
@@ -48,12 +41,13 @@ public class Crud {
         }
     }
 
-    public static void removeUser(Long id){
+    public static void removeUser(String email){
         try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
 
-            Query q = session.createQuery("delete Users where id = " + id);
-            q.executeUpdate();
+            Users user = session.byNaturalId(Users.class).using("email", email).load();
+
+            session.delete(user);
 
             session.getTransaction().commit();
         } catch (Throwable cause){
@@ -61,62 +55,31 @@ public class Crud {
         }
     }
 
-    public static List<Users> getUser(String email) {
+    public static Users getUser(String email) {
+        Users user = null;
 
-        List list = null;
-
-        try(Session session = HibernateUtil.getSession()){
+        try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
 
-            Query query = session.createQuery("FROM Users where email=:emailParam");
-            query.setParameter("emailParam", email);
-            list = query.list();
+            user = session.byNaturalId(Users.class).using("email", email).load();
 
             session.getTransaction().commit();
-        } catch (Throwable cause){
+        } catch (Throwable cause) {
             cause.printStackTrace();
         }
 
-        return (List<Users>) list;
-    }
-
-    public static List<Users> getUsers(){
-
-        List list = null;
-
-        try(Session session = HibernateUtil.getSession()){
-            session.beginTransaction();
-
-            Query query = session.createQuery("FROM Users");
-            list = query.list();
-
-            session.getTransaction().commit();
-        } catch (Throwable cause){
-            cause.printStackTrace();
-        }
-
-        return (List<Users>) list;
+        return user;
     }
 
     public static Printer getPrinter(String email){
-        List<Users> list = getUser(email);
-        Printer printer = null;
+        Users user = getUser(email);
 
-        for(Users pair : list){
-            printer = pair.getPrinter();
-        }
-
-        return printer;
+        return user.getPrinter();
     }
 
     public static Price getPrice(String email){
-        List<Users> list = getUser(email);
-        Price price = null;
+        Users user = getUser(email);
 
-        for(Users pair : list){
-            price = pair.getPrice();
-        }
-
-        return price;
+        return user.getPrice();
     }
 }

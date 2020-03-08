@@ -10,4 +10,7 @@ public interface UpgradeStrategy {
     double upSpeedPrice(double speedPrice);
     double upCoolPrice(double coolPrice);
     double upChargePrice(double chargePrice);
+
+    int upFire(int flame);
+    int upCool(int cool);
 }

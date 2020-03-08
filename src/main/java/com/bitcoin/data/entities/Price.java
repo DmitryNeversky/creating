@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Price {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private double incomePrice;

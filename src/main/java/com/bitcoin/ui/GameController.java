@@ -64,14 +64,17 @@ public class GameController {
 
         btnIncome.setOnAction(e -> {
             game.initIncome(lblIncome);
+            game.initFlame(lblFlame);
         });
 
         btnSpeed.setOnAction(e -> {
             game.initSpeed(lblSpeed);
+            game.initFlame(lblFlame);
         });
 
         btnCooler.setOnAction(e -> {
             game.initCool(lblCool);
+            game.initFlame(lblFlame);
         });
 
         btnCharge.setOnAction(e -> {

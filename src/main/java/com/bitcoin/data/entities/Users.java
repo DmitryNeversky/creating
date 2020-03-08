@@ -1,5 +1,7 @@
 package com.bitcoin.data.entities;
 
+import org.hibernate.annotations.NaturalId;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,7 +11,9 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NaturalId
     private String email;
+
     private String password;
 
     private double money;
@@ -24,9 +28,11 @@ public class Users {
 
     }
 
-    public Users(String email, String password) {
+    public Users(String email, String password, double money, Printer printer, Price price) {
         this.email = email;
         this.password = password;
+        this.printer = printer;
+        this.price = price;
     }
 
     public void setId(long id) {
@@ -35,14 +41,6 @@ public class Users {
 
     public void setMoney(double money) {
         this.money = money;
-    }
-
-    public void setPrinter(Printer printer) {
-        this.printer = printer;
-    }
-
-    public void setPrice(Price price) {
-        this.price = price;
     }
 
     public long getId() {

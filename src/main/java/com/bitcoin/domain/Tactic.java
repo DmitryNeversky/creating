@@ -29,7 +29,7 @@ public class Tactic{
     }
 
     double upSpeedPrice(double speedPrice){
-        return upgradeStrategy.upIncomePrice(speedPrice);
+        return upgradeStrategy.upSpeedPrice(speedPrice);
     }
 
     double upCoolPrice(double coolPrice){
@@ -38,5 +38,13 @@ public class Tactic{
 
     double upChargePrice(double chargePrice){
         return upgradeStrategy.upChargePrice(chargePrice);
+    }
+
+    int upFlame(int fire){
+        return upgradeStrategy.upFire(fire);
+    }
+
+    int upCool(int cool){
+        return upgradeStrategy.upCool(cool);
     }
 }

@@ -31,8 +31,10 @@ public class RemController extends Validator{
             String password = passwordField.getText();
 
             if(validEmail(email, emailLabel) && validPassword(password, passwordLabel)) {
-                if (new Controller(email, password).auth(emailLabel, passwordLabel)) {
-                    Controller.removeAccount(email);
+                Controller controller = new Controller(email, password);
+
+                if (controller.auth(emailLabel, passwordLabel)) {
+                    controller.removeAccount();
                     remButton.getScene().getWindow().hide();
                     repaint("/fxml/auth.fxml", "Авторизация");
                 }

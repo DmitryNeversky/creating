@@ -41,4 +41,14 @@ public class LowPrinter implements UpgradeStrategy{
     public double upChargePrice(double chargePrice) {
         return chargePrice *= 1.1;
     }
+
+    @Override
+    public int upFire(int flame) {
+        return flame + 4;
+    }
+
+    @Override
+    public int upCool(int cool) {
+        return cool + 6;
+    }
 }

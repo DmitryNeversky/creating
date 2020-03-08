@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Printer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private int lvl;
@@ -14,6 +14,11 @@ public class Printer {
     private int speed;
     private int cooler;
     private int charge;
+
+    private int lvlIncome;
+    private int lvlSpeed;
+    private int lvlCool;
+    private int lvlCharge;
 
     @OneToOne(mappedBy="printer")
     private Users users;
@@ -74,6 +79,38 @@ public class Printer {
 
     public void setCharge(int charge) {
         this.charge = charge;
+    }
+
+    public int getLvlIncome() {
+        return lvlIncome;
+    }
+
+    public void setLvlIncome(int lvlIncome) {
+        this.lvlIncome = lvlIncome;
+    }
+
+    public int getLvlSpeed() {
+        return lvlSpeed;
+    }
+
+    public void setLvlSpeed(int lvlSpeed) {
+        this.lvlSpeed = lvlSpeed;
+    }
+
+    public int getLvlCool() {
+        return lvlCool;
+    }
+
+    public void setLvlCool(int lvlCool) {
+        this.lvlCool = lvlCool;
+    }
+
+    public int getLvlCharge() {
+        return lvlCharge;
+    }
+
+    public void setLvlCharge(int lvlCharge) {
+        this.lvlCharge = lvlCharge;
     }
 
     public Users getUsers() {
