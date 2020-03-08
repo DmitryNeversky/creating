@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Game {
 
-    public static String email = "a@mail.ru";
+    public static String email;
 
     private static volatile double money;
     private static int lvl;

@@ -11,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/bitcoin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/auth.fxml"));
         primaryStage.setTitle("Authorize");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setOnCloseRequest(e -> Game.stop());

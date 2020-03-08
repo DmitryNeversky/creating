@@ -4,39 +4,47 @@ import com.bitcoin.data.database.Crud;
 import com.bitcoin.data.entities.Users;
 import javafx.scene.control.Label;
 
+import java.util.List;
+
 public class Controller {
     private String email;
     private String password;
 
-    private Users user;
-
     public Controller(String email, String password){
         this.email = email;
         this.password = password;
-        user = Crud.getUser(email);
     }
 
     public boolean auth(Label emailLabel, Label passwordLabel){
-        if(user != null) {
-            if (!user.getEmail().equals(email)) {
-                emailLabel.setText("Аккаунт не найден");
-                return false;
+        List<Users> list = Crud.getUsers();
+
+        int search = 0;
+
+        for(Users pair : list){
+            if(pair.getEmail().equals(email))
+                search++;
+        }
+
+        if(search > 0) {
+            Users user = Crud.getUser(email);
+
+            if (user.getPassword().equals(password)) {
+                passwordLabel.setText("");
+                return true;
             } else {
-                emailLabel.setText("");
-                if (user.getPassword().equals(password)) {
-                    return true;
-                } else {
-                    passwordLabel.setText("Пароли не совпадают");
-                    return false;
-                }
+                passwordLabel.setText("Пароли не совпадают");
+                return false;
             }
         } else {
+            emailLabel.setText("Аккаунт не найден");
             return false;
         }
     }
 
     public boolean registry(Label emailLabel){
-        if(!user.getEmail().equals(email)) {
+        Users user = Crud.getUser(email);
+
+        if (user == null) {
             Crud.addUser(email, password);
             return true;
         } else {
@@ -45,6 +53,7 @@ public class Controller {
         }
     }
 
+    // Доварить
     public void removeAccount(){
         Crud.removeUser(email);
     }

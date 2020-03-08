@@ -4,11 +4,13 @@ import com.bitcoin.data.entities.Price;
 import com.bitcoin.data.entities.Printer;
 import com.bitcoin.data.entities.Users;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class Crud {
 
     public static void addUser(String email, String password){
-
         try(Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
 
@@ -16,7 +18,9 @@ public class Crud {
 
             Price price = new Price(10, 15, 20 ,10);
 
-            session.save(new Users(email, password, 100, printer, price));
+            Users users = new Users(email, password, 100, printer, price);
+
+            session.save(users);
 
             session.getTransaction().commit();
         } catch (Throwable cause){
@@ -69,6 +73,24 @@ public class Crud {
         }
 
         return user;
+    }
+
+    @SuppressWarnings("unchecked")
+    public static List<Users> getUsers(){
+        List<Users> list = null;
+
+        try(Session session = HibernateUtil.getSession()) {
+            session.beginTransaction();
+
+            Query query = session.createQuery("FROM Users");
+            list = (List<Users>) query.list();
+
+            session.getTransaction().commit();
+        } catch (Throwable cause) {
+            cause.printStackTrace();
+        }
+
+        return list;
     }
 
     public static Printer getPrinter(String email){
